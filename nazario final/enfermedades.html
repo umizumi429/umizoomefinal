@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informaci¨®n sobre Enfermedades Oculares</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0e5cf, #f9f3e5);
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #8e44ad;
+            margin-bottom: 40px;
+            font-size: 3em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .enfermedad {
+            flex: 1 1 calc(45% - 20px);
+            padding: 20px;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .enfermedad::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 10px;
+            background: rgba(52, 152, 219, 0.1);
+            z-index: 0;
+            transition: transform 0.3s;
+            transform: scale(1);
+        }
+        .enfermedad:hover::before {
+            transform: scale(1.1);
+        }
+        .enfermedad:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 0;
+            font-size: 1.8em;
+            z-index: 1;
+            position: relative;
+            text-align: center;
+            padding: 10px;
+            border-bottom: 2px solid #2980b9;
+            transition: color 0.3s;
+        }
+        h2:hover {
+            color: #3498db;
+        }
+        p {
+            margin: 15px 0;
+            line-height: 1.5;
+            z-index: 1;
+            position: relative;
+        }
+        a {
+            text-decoration: none;
+            color: #e74c3c;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+        a:hover {
+            color: #c0392b;
+            transform: scale(1.1);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 600px) {
+            .enfermedad {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Informacion sobre Enfermedades Oculares</h1>
+
+        <div class="enfermedad">
+            <h2>Conjuntivitis</h2>
+            <p>La conjuntivitis es la inflamacion de la conjuntiva, el tejido que recubre el ojo y el interior de los parpados. Puede ser causada por infecciones, alergias o irritantes.</p>
+            <a href="https://es.wikipedia.org/wiki/Conjuntivitis" target="_blank">Mas informacion sobre Conjuntivitis</a>
+        </div>
+
+        <div class="enfermedad">
+            <h2>Cataratas</h2>
+            <p>Las cataratas son una opacidad del cristalino que afecta la vision. Suelen desarrollarse con la edad, aunque tambien pueden ser causadas por otros factores como lesiones o enfermedades.</p>
+            <a href="https://es.wikipedia.org/wiki/Catarata" target="_blank">Mas informacion sobre Cataratas</a>
+        </div>
+
+        <div class="enfermedad">
+            <h2>Miopia</h2>
+            <p>La miopia es un defecto refractivo en el que los objetos cercanos se ven claramente, mientras que los objetos lejanos aparecen borrosos. Es comun en ninos y jovenes.</p>
+            <a href="https://es.wikipedia.org/wiki/Miop%C3%ADa" target="_blank">Mas informacion sobre Miopia</a>
+        </div>
+
+        <div class="enfermedad">
+            <h2>Glaucoma</h2>
+            <p>El glaucoma es un grupo de enfermedades que danan el nervio optico, a menudo relacionado con la presion ocular alta. Puede llevar a la perdida de vision si no se trata.</p>
+            <a href="https://es.wikipedia.org/wiki/Glaucoma" target="_blank">Mas informacion sobre Glaucoma</a>
+        </div>
+    </div>
+
+</body>
+</html>
+

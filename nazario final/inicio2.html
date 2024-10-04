@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio Combinado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            background-color: #2c3e50;
+            padding: 15px 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            transition: background-color 0.5s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: #18bc9c;
+            transform: scale(1.1);
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            transition: transform 1s ease-in-out;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #inicio {
+            background: linear-gradient(to right, #2980b9, #6dd5fa);
+        }
+
+        #servicios {
+            background: linear-gradient(to right, #18bc9c, #a8e063);
+        }
+
+        #portafolio {
+            background: linear-gradient(to right, #e74c3c, #f39c12);
+        }
+
+        #contacto {
+            background: linear-gradient(to right, #8e44ad, #9b59b6);
+        }
+
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #fff;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF; /* Color del botón */
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3; /* Color del botón al pasar el ratón */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Efecto Parallax */
+        section:hover {
+            transform: scale(1.05);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        @media (max-width: 768px) {
+            nav ul li a {
+                font-size: 16px; /* Font size for mobile */
+            }
+
+            .button {
+                padding: 10px 20px; /* Smaller button on mobile */
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Lentes para todos</a></li>
+                <li><a href="#servicios">tapitas</a></li>
+                <li><a href="#portafolio">zoológico</a></li>
+                <li><a href="#contacto">asilo de ancianos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio">
+        <div class="section-content">
+            <h1>Lentes para todos</h1>
+            <p>en este apartado se verá todo lo que se hizo en este proyecto para ayudar a los alumnos con mala vista.</p>
+            <a href="lentes.html" class="button">Ir a otra página</a>
+        </div>
+    </section>
+
+    <section id="servicios">
+        <div class="section-content">
+            <h1>Servicios</h1>
+            <p>Ofrecemos una amplia gama de servicios. Conócelos todos.</p>
+            <a href="pagina_destino.html" class="button">Ir a otra página</a>
+        </div>
+    </section>
+
+    <section id="portafolio">
+        <div class="section-content">
+            <h1>Portafolio</h1>
+            <p>Explora nuestros trabajos y proyectos recientes en este apartado.</p>
+            <a href="pagina_destino.html" class="button">Ir a otra página</a>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div class="section-content">
+            <h1>Contacto</h1>
+            <p>Ponte en contacto con nosotros. Estamos aquí para ayudarte.</p>
+            <a href="pagina_destino.html" class="button">Ir a otra página</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Derechos reservados para el equipo umisumi.</p>
+    </footer>
+
+    <script>
+        // Función para aplicar la animación de aparición
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const triggerHeight = window.innerHeight * 0.75;
+
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < triggerHeight) {
+                    section.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
